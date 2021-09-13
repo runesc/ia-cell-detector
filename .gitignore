@@ -1,2 +1,5 @@
 *.pyc
 __pycache__/
+.DS_Store
+src/main/python/components/__pycache__/Navbar.cpython-36.pyc
+*.pyc
