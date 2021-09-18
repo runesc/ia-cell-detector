@@ -4,15 +4,17 @@ from PyQt5.QtWidgets import QMainWindow, QStackedWidget, QWidget
 from PyQt5.QtCore import Qt, pyqtSignal
 
 from core.LF import LifeCycle
+from core.IA import NeuralNetwork
 from components.Navbar import Navbar
 from views.IA import IAView
 from views.Trainer import TrainerView
+from views.Config import ConfigView
 
 
 import sys
 
 
-class Main(QMainWindow, LifeCycle, ApplicationContext):
+class Main(QMainWindow, LifeCycle, NeuralNetwork, ApplicationContext):
 	D_SIGNAL = pyqtSignal()
 	store = {
 		'PATH': str(Path.home()) + '/AIDemo/',
@@ -22,6 +24,11 @@ class Main(QMainWindow, LifeCycle, ApplicationContext):
 		'SM' : None
 	}
 
+	def __init__(self):
+		super().__init__()
+		self.setPath(self.store['PATH'])
+		self.showPath()
+
 	def render_(self):
 		navbar = Navbar(self)
 
@@ -29,9 +36,9 @@ class Main(QMainWindow, LifeCycle, ApplicationContext):
 		self.container = QWidget(self, objectName="View-container")
 		self.sm = QStackedWidget(self.container, objectName="screen-manager")
 
-		for view in [IAView, TrainerView]:
+		for view in [IAView, TrainerView, ConfigView]:
 			self.sm.addWidget(view(self))
-		self.sm.setCurrentIndex(0)
+		self.sm.setCurrentIndex(1)
 
 		# Esto permite que otros componentes puedan hacer switch entre vistas
 		self.store['SM'] = self.sm

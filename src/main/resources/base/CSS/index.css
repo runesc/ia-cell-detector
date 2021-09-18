@@ -1,3 +1,6 @@
+*{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
 QWidget#Navbar{
     background-color: #212121;
 }
@@ -5,5 +8,48 @@ QWidget#button-container{
     background-color: blueviolet;
 }
 QWidget#View-container{
-    background-color:deeppink;
+    background-color:white;
+}
+
+QWidget#Trainer-view{
+    background-color: #262626;
+}
+
+QLineEdit#Input, QLineEdit#Input-error{
+    background-color: #212121;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    border:0;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+QLineEdit#Input-error{
+    border: 1px solid tomato;
+    color: tomato;
+}
+
+QLabel#Title{
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 32px;
+    color: white;
+}
+QLabel#Subtitle{
+    font-weight: 600;
+    line-height: 1.5;
+    color: white;
+}
+
+QPushButton#btn-primary{
+    background-color: blueviolet;
+    color: white;
+    font-weight: bold;
+    border:0;
+    padding: 12px;
+    border-radius: 4px;
+}
+QPushButton#btn-primary:hover{
+    background-color: #6918b4
 }

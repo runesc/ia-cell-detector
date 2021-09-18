@@ -24,6 +24,7 @@ class Navbar(QWidget, LifeCycle):
 		if self.store:
 			self.buttons[0].clicked.connect(lambda: self.store['SM'].setCurrentIndex(0))
 			self.buttons[1].clicked.connect(lambda: self.store['SM'].setCurrentIndex(1))
+			self.buttons[2].clicked.connect(lambda: self.store['SM'].setCurrentIndex(2))
 
 			#for item in range(len(self.buttons)): self.buttons[item].clicked.connect(lambda: self.store['SM'].setCurrentIndex(item))
 

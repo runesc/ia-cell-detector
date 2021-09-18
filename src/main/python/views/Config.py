@@ -2,9 +2,7 @@ from core.LF import LifeCycle
 from PyQt5.QtWidgets import QWidget, QLabel
 from PyQt5.QtCore import pyqtSlot
 
-from components.Input import Input
-
-class IAView(QWidget, LifeCycle):
+class ConfigView(QWidget, LifeCycle):
 	parent = None
 	store = None
 
@@ -15,8 +13,6 @@ class IAView(QWidget, LifeCycle):
 		self.store = parent.store
 
 	def render_(self):
-		mensaje = Input(self, placeholder="Hola mundo")
-		mensaje.resize(317, 43)
-
+		mensaje = QLabel("Config view", self)
 
 	def responsiveUI(self): pass
